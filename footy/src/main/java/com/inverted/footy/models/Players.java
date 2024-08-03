@@ -1,46 +1,40 @@
 package com.inverted.footy.models;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import com.inverted.footy.utils.PlayerPosition;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-@Document(collection = "clubs")
+@Document(collection = "players")
 @Accessors(chain = true)
+@NoArgsConstructor
 @Data
-public class Club {
-
+public class Players {
   @MongoId(FieldType.OBJECT_ID)
   private String id;
 
-  @Indexed(unique = true)
-  @Field
+  @Indexed
   private String name;
 
-  @Field
-  @Indexed(unique = true)
-  private String acronym;
+  private Date birthDate;
 
-  private Address address;
+  @Indexed
+  @Field(targetType = FieldType.STRING)
+
+  private PlayerPosition position;
+
+  private boolean isAvailable;
 
   private Date createdAt;
 
   private Date updatedAt;
-  @DBRef
-
-  private Set<Players> players;
-
-  public Club() {
-    this.players = new HashSet<>();
-  }
 }
