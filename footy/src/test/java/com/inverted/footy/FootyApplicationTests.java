@@ -1,10 +1,10 @@
-package com.inverted.footypress;
+package com.inverted.footy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FootypressApplicationTests {
+class FootyApplicationTests {
 
 	@Test
 	void contextLoads() {

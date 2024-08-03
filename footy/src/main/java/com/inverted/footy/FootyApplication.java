@@ -1,13 +1,13 @@
-package com.inverted.footypress;
+package com.inverted.footy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FootypressApplication {
+public class FootyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FootypressApplication.class, args);
+		SpringApplication.run(FootyApplication.class, args);
 	}
 
 }
