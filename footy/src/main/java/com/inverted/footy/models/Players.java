@@ -29,7 +29,6 @@ public class Players {
 
   @Indexed
   @Field(targetType = FieldType.STRING)
-
   private PlayerPosition position;
 
   private boolean isAvailable;
